@@ -1,0 +1,5 @@
+git init
+git status
+git add . // for all
+git rm -r --cached node_modules
+git commit -m "first version of our hotel"
