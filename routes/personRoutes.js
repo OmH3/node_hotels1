@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Person = require('./models/person') // same go to person.js in models
+const Person = require('./../models/person') // same go to person.js in models
 router.post('/',async (req,res)=>{
     try{
     const data=req.body //assuming req body contains the person data
