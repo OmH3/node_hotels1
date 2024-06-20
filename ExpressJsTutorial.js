@@ -47,6 +47,8 @@ const menuRoutes = require('./routes/menuRoutes');
 
 app.use('/menu', menuRoutes);
 
+// added a comment for testing
+
 app.listen(3000,()=>{
     console.log('server is listening on port 3000');
 }); // port number jispe request sunega ye
