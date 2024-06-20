@@ -1,10 +1,11 @@
 // this file is used for estanblishing connection between nodejs and mongodb
 const mongoose = require('mongoose');
-
+require('dotenv').config() // to use dotenv
 // define mongodb url
 
-const mongoURL = 'mongodb://localhost:27017/mydb' // any database name
-
+// const mongoURL = 'mongodb://localhost:27017/mydb' // any database name    => local url
+// const mongoURL = process.env.MONGODB_URL_LOCAL // local url saved in .env file
+const mongoURL = process.env.MONGODB_URL;  // cloud hosting url saved in .env file for security
 // setup mongodb connection
 
 mongoose.connect(mongoURL,{

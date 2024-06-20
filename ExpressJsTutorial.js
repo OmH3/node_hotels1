@@ -11,8 +11,9 @@ const express = require('express');
 const app = express(); // express ka complete map ab app me stored h
 
 const db = require('./db') // look in db.js u will find why we did this
+require('dotenv').config()
 
-
+const PORT = process.env.PORT || 3000; // if PORT in env file then use it otherwise use local 3000 port 
 
 
 
@@ -48,6 +49,7 @@ const menuRoutes = require('./routes/menuRoutes');
 app.use('/menu', menuRoutes);
 
 // added a comment for testing
+
 
 app.listen(3000,()=>{
     console.log('server is listening on port 3000');
