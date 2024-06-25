@@ -2,4 +2,8 @@
 
 node_modules/
 .env
+gitCommands.txt
+greet.txt
+MongoDb.txt
+server.js
 # other entries
