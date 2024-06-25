@@ -20,17 +20,18 @@ const PORT = process.env.PORT || 3000; // if PORT in env file then use it otherw
 const bodyParser=require('body-parser') // parses information and extract info from various forms
 app.use(bodyParser.json()) // parse all json format in body tag and convert into object for use
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
+
+// Middleware function
+
+const logRequest = (req,res,next)=>{
+    console.log(`${new Date().toLocaleString()} Request Made To: ${req.originalUrl}`);
+    next(); // move on to the next phase 
+}
+
+app.get('/', logRequest ,(req, res) => {
+    res.send('Welcome to Our Hotel');
 });
 
-app.get("/om", (req,res)=>{
-    var om={
-        name:'om',
-        height:'180cm',
-    }
-    res.send(om);
-});
 
 // import router file
 
